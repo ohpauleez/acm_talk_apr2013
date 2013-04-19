@@ -1,0 +1,110 @@
+A Clojure Walk-through - a talk for PSU ACM
+============================================
+Code follows the core practices of The Art of Readable Code and The Practice of Programming 
+
+
+A General Overview
+-------------------
+
+
+Requirements
+------------
+
+
+Usage and Examples
+------------------
+
+
+Hacking
+=======
+
+Interactive development
+------------------------
+
+### Using the Clojure REPL
+
+More to come, but: `lein repl`
+
+Working with Clojure
+--------------------
+### Fireplace.vim tips
+
+Start a repl that vim will connect to:
+
+    lein repl
+
+Use vim to open a Clojure file: `vim somefile.clj`
+
+ * yab - "Yank all block" copy all code between two parens, including the parens
+ * cib - "Change in block" delete the code between two parens and go into insert mode
+ * dib - "Delete in block" delete the code between two parens
+ * dab - "Delete all block" delete the code betweens two parens, including the parens
+ * ctrl-w ctrl-o - "Only this Window" closes all windows except your current one
+   * good for getting rid of the stacktrace window
+
+Here are helpful Fireplace commands
+
+ * `cpp` - eval paragraph
+ * `gf`  - goto file, if your cursor is over a name in the ns
+   * `ctrl+w gf` - in a new window/tab, goto file
+ * `gd`  - goto definition
+ * `K`   - Look at doc string
+ * `cpr` - require the file
+ * `cpR` - require the file and reload *ALL* files
+ * `[d`  - look at the source of symbol under cursor
+
+### Paredit.vim tips
+
+I also make use of the paredit.vim file from the slimv.vim plugin. This assumes your `<leader>` is `\`
+
+ * :call PareditToggle() - toggle it on and off.
+ * \W wrap in paren (works with visual selection too)
+ * \J join paren - (a)(b) -> (a b)
+ * \O split paren - (a b) -> (a)(b)
+ * \S splice paren - ((a b)) -> (a b)
+ * \< move left - moves parens around blocks (a)|(b) -> ((a) b)
+ * \> move right - moves parens around blocks (a|)(b) -> (a (b))
+
+Wrapping can also be tailored, and used on a visual block:
+
+ * `\w"`
+ * `\w[`
+ * `\w(`
+ * `\w{`
+
+### Surround.vim tips
+
+Surround let's you change surrounding characters, which is helpful in all languages.
+
+ * `cs"'` - change surrounding " to '  ... this will work for any two characters
+
+
+### Using emacs
+
+ * Take a look at [Emacs Live](https://github.com/overtone/emacs-live)
+
+
+### Using Eclipse
+
+ * Take a look at [CounterClockwise plugin](http://code.google.com/p/counterclockwise/)
+
+
+Packages used and links
+-----------------------
+
+### Clojure
+
+ * [Planet Clojure](http://clojure.in/) - Clojure news
+ * [ClojureDocs](http://clojuredocs.org/quickref/Clojure%20Core) - Clojure API lookup/search + examples
+ * [Clojure Documentation Project](http://clojure-doc.org/) - Guides, tutorials, etc.
+ * [Clojure Cheatsheet](http://jafingerhut.github.io/cheatsheet-clj-1.3/cheatsheet-tiptip-cdocs-summary.html)
+ * [4Clojure](http://www.4clojure.com/problems) - Clojure practice problems to learn the language
+ * [Clojars](https://clojars.org/) - open source community-driven package (Maven) repository
+ * [Maven Central Search](http://search.maven.org/) - central repository for some JVM projects
+
+License
+-------
+Copyright © 2012 Paul deGrandis
+
+Distributed under the Eclipse Public License, the same as Clojure.
+
