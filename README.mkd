@@ -45,6 +45,7 @@ Use vim to open a Clojure file: `vim somefile.clj`
 Here are helpful Fireplace commands
 
  * `cpp` - eval paragraph
+ * `cqp` - eval an entered statement within the namespace; useful for `(run-tests)`
  * `gf`  - goto file, if your cursor is over a name in the ns
    * `ctrl+w gf` - in a new window/tab, goto file
  * `gd`  - goto definition
