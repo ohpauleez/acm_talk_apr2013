@@ -52,6 +52,8 @@ Here are helpful Fireplace commands
  * `cpr` - require the file
  * `cpR` - require the file and reload *ALL* files
  * `[d`  - look at the source of symbol under cursor
+ * the `:make` command is aliased to `lein`, so `:make test` works
+ * `:A` - jump between the source and test file
 
 ### Paredit.vim tips
 
@@ -98,6 +100,7 @@ Packages used and links
  * [ClojureDocs](http://clojuredocs.org/quickref/Clojure%20Core) - Clojure API lookup/search + examples
  * [Clojure Documentation Project](http://clojure-doc.org/) - Guides, tutorials, etc.
  * [Clojure Cheatsheet](http://jafingerhut.github.io/cheatsheet-clj-1.3/cheatsheet-tiptip-cdocs-summary.html)
+ * [ClojureSphere](http://www.clojuresphere.com/) - Popularity and dependency graph information for Clojure libraries.  Useful for finding libraries.
  * [4Clojure](http://www.4clojure.com/problems) - Clojure practice problems to learn the language
  * [Clojars](https://clojars.org/) - open source community-driven package (Maven) repository
  * [Maven Central Search](http://search.maven.org/) - central repository for some JVM projects

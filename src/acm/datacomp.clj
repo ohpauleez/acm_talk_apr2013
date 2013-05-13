@@ -61,7 +61,8 @@
   (->> l-seq (drop 3) (take 2))
   (butlast l-seq)
   (drop-last 2 l-seq)
-  (filter #(= (type %) java.lang.String) l-seq)
+  (filter #(= (type %1) java.lang.String) l-seq)
+  (filter (fn [x] (= (type x) java.lang.String)) l-seq)
 
   ;; Functions
   (defn add2
@@ -78,11 +79,15 @@
   ;; but we can also pull sequential and associative data apart...
   (let [x (vector 1 2)]
     (first x))
-  (let [x (vector 1 2)
+  (let [x (vector 1 2 4)
         [a b] x]
     a)
   (let [[a b] (vector 1 2)]
     a)
+  (let [x {:a 1 :b 2}
+        {:keys [a]} x]
+    a)
+  (keys {:a 1, :b 2})
 
   ;; Tying it all together
   (defn fibo [] (map first (iterate (fn [[a b]] [b  (+ a b)]) [0 1])))
