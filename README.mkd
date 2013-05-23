@@ -1,6 +1,6 @@
 A Clojure Walk-through - a talk for PSU ACM
 ============================================
-Code follows the core practices of The Art of Readable Code and The Practice of Programming 
+Code follows the core practices of The Art of Readable Code and The Practice of Programming
 
 
 A General Overview
@@ -55,6 +55,7 @@ Here are helpful Fireplace commands
  * `[d`  - look at the source of symbol under cursor
  * the `:make` command is aliased to `lein`, so `:make test` works
  * `:A` - jump between the source and test file
+   * `:AT` - in a new tab, `:AV` - in a vertical split
 
 ### Paredit.vim tips
 
