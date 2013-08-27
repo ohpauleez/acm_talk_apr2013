@@ -49,9 +49,11 @@ Here are helpful Fireplace commands
  * `cqp` - eval an entered statement within the namespace; useful for `(run-tests)`
  * `gf`  - goto file, if your cursor is over a name in the ns
    * `ctrl+w gf` - in a new window/tab, goto file
+   * `ctrl+w f` - in a new split, goto file
  * `[d`  - look at the source/definition of symbol under cursor
  * `[ ctrl+d`  - goto definition in current buffer
    * `ctrl+w gd` - in a new window/tab, goto definition
+   * `ctrl+w d` - in a new split, goto definition
  * `K`   - Look at doc string
  * `cpr` - require the file
  * `cpR` - require the file and reload *ALL* files
