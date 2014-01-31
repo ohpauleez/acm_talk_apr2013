@@ -1,7 +1,7 @@
 (ns acm.datacomp)
 
 (comment
-  
+
 ;; Philosophy
 ;; ===========
 ;;
@@ -11,7 +11,7 @@
 
 ;; Let's program with values
 ;; --------------------------
-  
+
   (def numbers [1 2 3 4 5 6])
   (def words '("one" "two" "three" "four"))
   (def keywords #{:a :b :c})
@@ -35,7 +35,7 @@
   ;;          5
   ;;        + 6
   ;;        ----
-  ;; 
+  ;;
   ;; So why would a programming language treat you like a child?
   (= (+ 1 2 3 4 5 6)
      (apply + numbers))
