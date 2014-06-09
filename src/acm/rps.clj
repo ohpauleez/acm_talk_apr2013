@@ -3,8 +3,8 @@
   Completely functional")
 
 (def winning-combos {:rock :scissors
-                    :paper :rock
-                    :scissors :paper})
+                     :paper :rock
+                     :scissors :paper})
 
 (defn generate-move
   "Returns a random, valid move - as a keyword

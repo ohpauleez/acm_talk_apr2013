@@ -41,12 +41,13 @@ Use vim to open a Clojure file: `vim somefile.clj`
  * dab - "Delete all block" delete the code betweens two parens, including the parens
  * ctrl+w ctrl+o - "Only this Window" closes all windows except your current one
    * good for getting rid of the stacktrace window
-   * also `:lcl` - close location-windoe
+   * also `:lcl` - close location-window
+   * `:ccl` - close quickfix window
 
 Here are helpful Fireplace commands
 
  * `cpp` - eval paragraph // eval innermost-level form - "compile paragraph"
- * `cpab` - eval current level form - "compile all block"
+   * `cpab` - eval current level form - "compile all block"
  * `cqp` - eval an entered statement within the namespace; useful for `(run-tests)`
  * `cmm` and `c1m` - macroexpand and macroexpand-1
  * `c!!` - replace current form with eval'd epression result
@@ -58,13 +59,13 @@ Here are helpful Fireplace commands
    * `ctrl+w gd` - in a new window/tab, goto definition
    * `ctrl+w d` - in a new split, goto definition
  * `K`   - Look at doc string
- * `cpr` - require the file
+ * `cpr` - require the file and run any tests present
  * the `:make` command is aliased to `lein`, so `:make test` works
- * `:A` - jump between the source and test file
+ * `:A` - jump between the source and test file (In later versions, this requires [leiningen.vim](https://github.com/tpope/vim-leiningen))
    * `:AT` - in a new tab, `:AV` - in a vertical split
  * *Enter/Return* within the location-window stacktrace will jump to that source line
  * Omnicompletion in *INSERT* mode: `ctrl-x ctrl-o`
- * `:RunTests`
+ * `:RunTests!` - Run all tests in all namespaces
 
 ### Paredit.vim tips
 
