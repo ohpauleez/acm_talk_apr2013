@@ -96,6 +96,7 @@ Surround let's you change surrounding characters, which is helpful in all langua
 ### Using emacs
 
  * Take a look at [Emacs Live](https://github.com/overtone/emacs-live)
+ * See the [cheat sheet](./emacs-cheat-sheet.mkd)
 
 
 ### Using Eclipse
