@@ -1,22 +1,28 @@
 # Project related
 
+
 # Java related
 pom.xml
 *jar
 *.class
 
 # Leiningen
-/classes
-/lib
-/native
-/checkouts
-/target
+classes/
+lib/
+native/
+checkouts/
+target/
 .lein-deps-sum
 .lein-failures
-.lein-cljsbuild-repl
 .lein-repl-history
-/.lein-plugins
+.lein-cljsbuild-repl
+.lein-plugins/
 repl-port
+.nrepl-port
+.repl
+
+# Datomic
+*.db
 
 # Python
 *.pyc
@@ -34,6 +40,16 @@ Gemfile.lock
 *.tmp
 *.bak
 
+# Editors (IntelliJ / Eclipse)
+*/.idea
+.idea
+*/.classpath
+.classpath
+*/.project
+.project
+*/.settings
+.settings
+
 # OS X
 .DS_Store
 
@@ -41,6 +57,9 @@ Gemfile.lock
 *.log
 
 # Docs
-#/autodoc
-#/docs
+autodoc/
+
+# Builds
+out/
+*.out
 
