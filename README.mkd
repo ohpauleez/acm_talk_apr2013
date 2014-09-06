@@ -39,6 +39,9 @@ Use vim to open a Clojure file: `vim somefile.clj`
  * cib - "Change in block" delete the code between two parens and go into insert mode
  * dib - "Delete in block" delete the code between two parens
  * dab - "Delete all block" delete the code betweens two parens, including the parens
+ * You can substitute `[`, `{`, or any specific marker for `b` above.
+   * `ci[` - Change in a vector
+   * `da{` - Delete an entire map
  * ctrl+w ctrl+o - "Only this Window" closes all windows except your current one
    * good for getting rid of the stacktrace window
    * also `:lcl` - close location-window
@@ -54,6 +57,7 @@ Here are helpful Fireplace commands
  * `gf`  - goto file, if your cursor is over a name in the ns
    * `ctrl+w gf` - in a new window/tab, goto file
    * `ctrl+w f` - in a new split, goto file
+   * `ctrl-o` - jump back to the previous location (useful when jumping between files)
  * `[d`  - look at the source/definition of symbol under cursor
  * `[ ctrl+d`  - goto definition in current buffer
    * `ctrl+w gd` - in a new window/tab, goto definition
@@ -91,6 +95,7 @@ Wrapping can also be tailored, and used on a visual block:
 Surround let's you change surrounding characters, which is helpful in all languages.
 
  * `cs"'` - change surrounding " to '  ... this will work for any two characters
+ * `ds[` - delete surrounding \[
 
 
 ### Using emacs
@@ -102,6 +107,14 @@ Surround let's you change surrounding characters, which is helpful in all langua
 ### Using Eclipse
 
  * Take a look at [CounterClockwise plugin](http://code.google.com/p/counterclockwise/)
+
+### Using IntelliJ
+
+ * Take a look at [Cursive Clojure](https://cursiveclojure.com/)
+
+### Other editor options
+
+ * [LightTable](http://www.lighttable.com/)
 
 
 Packages used and links
