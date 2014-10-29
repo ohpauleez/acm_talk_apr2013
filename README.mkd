@@ -51,6 +51,8 @@ Here are helpful Fireplace commands
 
  * `cpp` - eval paragraph // eval innermost-level form - "compile paragraph"
    * `cpab` - eval current level form - "compile all block"
+ * `:Last` - see the output of the last eval/`cpp` in a dedicated window/buffer
+ * `cpr` - require the file and run any tests present
  * `cqp` - eval an entered statement within the namespace; useful for `(run-tests)`
  * `cmm` and `c1m` - macroexpand and macroexpand-1
  * `c!!` - replace current form with eval'd epression result
@@ -63,7 +65,6 @@ Here are helpful Fireplace commands
    * `ctrl+w gd` - in a new window/tab, goto definition
    * `ctrl+w d` - in a new split, goto definition
  * `K`   - Look at doc string
- * `cpr` - require the file and run any tests present
  * the `:make` command is aliased to `lein`, so `:make test` works
  * `:A` - jump between the source and test file (In later versions, this requires [leiningen.vim](https://github.com/tpope/vim-leiningen))
    * `:AT` - in a new tab, `:AV` - in a vertical split
@@ -95,6 +96,7 @@ Wrapping can also be tailored, and used on a visual block:
 Surround let's you change surrounding characters, which is helpful in all languages.
 
  * `cs"'` - change surrounding " to '  ... this will work for any two characters
+  * `cs(]` - change surrounding \( to \[, without introducing any new whitespace
  * `ds[` - delete surrounding \[
 
 
@@ -128,8 +130,10 @@ Packages used and links
  * [Clojure Documentation Project](http://clojure-doc.org/) - Guides, tutorials, etc.
  * [Clojure Cheatsheet](http://jafingerhut.github.io/cheatsheet-clj-1.3/cheatsheet-tiptip-cdocs-summary.html)
  * [ClojureSphere](http://www.clojuresphere.com/) - Popularity and dependency graph information for Clojure libraries.  Useful for finding libraries.
+ * [CrossClj](http://crossclj.info/) - Like ClojureSphere, but allows exploration of code and docs, in addition to dependency information
  * [Clojure Toolbox](http://www.clojure-toolbox.com/) - a topical list of Clojure libraries
  * [ClojureWerkz](http://clojurewerkz.org/) - a collection of Clojure libraries all in the same style and with the same doc structure
+   * The quality of the libraries varies widely, and this should not be the first stop when looking for a Clojure library
  * [4Clojure](http://www.4clojure.com/problems) - Clojure practice problems to learn the language
  * [Clojars](https://clojars.org/) - open source community-driven package (Maven) repository
  * [Maven Central Search](http://search.maven.org/) - central repository for some JVM projects
