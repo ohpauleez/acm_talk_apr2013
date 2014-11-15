@@ -7,7 +7,7 @@
 ;;
 ;; There is a lot of subtle power in composition.
 ;; We're even told to favor it over other methods of creation -
-;; "Favor composition over inheritence".  But what does that mean in practice?
+;; "Favor composition over inheritance".  But what does that mean in practice?
 
 ;; Let's program with values
 ;; --------------------------
@@ -15,6 +15,8 @@
   (def numbers [1 2 3 4 5 6])
   (def words '("one" "two" "three" "four"))
   (def keywords #{:a :b :c})
+  (def regexs {:hello #"hello"
+               :only-digits #"\d+"})
 
   (into words numbers)
   (conj numbers 7)
@@ -22,6 +24,18 @@
   (set (conj numbers (count numbers)))
   (into (conj numbers 7) keywords)
   (into (conj numbers 7) (reverse words))
+
+  (re-find #"\d+" "This is a string with 1234 some digits 5678 in it 90")
+  (re-seq #"\d+" "This is a string with 1234 some digits 5678 in it 90")
+
+  ;; Now let's use our map
+  (re-seq (:only-digits regexs) "This is a string with 1234 some digits 5678 in it 90")
+
+  ;; And just some other numbers
+  (type 3N) ;; BigInteger literal
+  (type 0xa) (type 012) (type 2r1010) ;; Long, but hex, oct, and binary literals
+  (type 3.14) ;; Double
+  (type 3M) ;; BigDecimal literal
 
   ;; How would we sum all the numbers above?
   ;; We'd just use addition.  In grade school you wrote:
@@ -39,6 +53,9 @@
   ;; So why would a programming language treat you like a child?
   (= (+ 1 2 3 4 5 6)
      (apply + numbers))
+
+  ;; How would we check the numbers were all in ascending order
+  (apply < numbers)
 
   ;; Mapping across collections?
   ;; Higher-order functions: One of many benefits of first-class functions
@@ -63,6 +80,7 @@
   (drop-last 2 l-seq)
   (filter #(= (type %1) java.lang.String) l-seq)
   (filter (fn [x] (= (type x) java.lang.String)) l-seq)
+  (remove #(instance? String %) l-seq)
 
   ;; Functions
   (defn add2
@@ -97,6 +115,9 @@
 
   ;; We can also use the full JVM/Java ecosystem...
   (Math/round 14.4566) ; This is the `round` static method of the `Math` class
+  ; This below, is calling the `startsWith` method of the String Obj, "Hello World"
+  (.startsWith "Hello World" "Hello")
+  (filter #(.startsWith (str %) "t") l-seq)
 
   ;; And we can sanely do concurrent programming
   ;;
@@ -106,6 +127,8 @@
   (inc (deref result))
   (inc @result)
   (def cores (.availableProcessors (Runtime/getRuntime)))
+  ;; You can also use Threads directly, although it is not very common
+  (.start (Thread. #(println "Hello from inside a thread")))
 
   (defn long-running-job [n]
     (Thread/sleep 3000)
