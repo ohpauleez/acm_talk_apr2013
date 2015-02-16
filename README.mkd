@@ -46,6 +46,10 @@ Use vim to open a Clojure file: `vim somefile.clj`
    * good for getting rid of the stacktrace window
    * also `:lcl` - close location-window
    * `:ccl` - close quickfix window
+ * `ctrl+x ctrl+o` - Omnicompletion (uses the running Clojure repl)
+ * `ctrl+x ctrl+n` - next-word completion
+  * You can replace `ctrl+n` with `ctrl+p` for previous word, or `ctrl-l` for line completion
+  * You can also replace `ctrl+n` with `ctrl+k` for dictionary completion
 
 Here are helpful Fireplace commands
 
