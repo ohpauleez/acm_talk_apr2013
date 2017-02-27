@@ -16,8 +16,10 @@
 (defn valid-choice?
   "Determines if a given keyword-move is a valid choice;
   ie: in the set #{:rock :paper :scissors}"
-  [kw-choice]
-  (contains? winning-combos kw-choice))
+  ([kw-choice]
+   (valid-choice? winning-combos kw-choice))
+  ([combos kw-choice]
+   (contains? combos kw-choice)))
 
 (defn winning-choice
   "Given two keyword choices (two players)

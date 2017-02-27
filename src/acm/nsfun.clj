@@ -1,11 +1,11 @@
 (ns acm.nsfun
-  (:require [clojure.string :as cstr]))
+  (:require [clojure.string :as string]))
 
 (in-ns 'clojure.string)
-(defn ends-with? [^String s ^String ending-s]
+(defn another-ends-with? [^String s ^String ending-s]
   (.endsWith s ending-s))
 (in-ns 'acm.nsfun)
 
 (defn ends-with-world? [x]
-  (cstr/ends-with? x "World"))
+  (string/another-ends-with? x "World"))
 

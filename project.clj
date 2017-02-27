@@ -3,8 +3,11 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/core.logic "0.8.7"]]
-  :plugins [[lein-kibit "0.0.8"]
-            [lein-marginalia "0.7.1"]])
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 ;[org.clojure/core.logic "0.8.11"] ;; You should use this version
+                 ;; 0.8.4 is needed for a dated defrel/fact example
+                 [org.clojure/core.logic "0.8.4"]]
+  :pedantic? :abort
+  :plugins [[lein-kibit "0.1.3"]
+            [lein-marginalia "0.9.0"]])
 

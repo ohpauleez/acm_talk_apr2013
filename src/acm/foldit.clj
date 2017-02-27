@@ -1,6 +1,6 @@
 (ns acm.foldit
   "Examples on how to use `reducers` and their benefits"
-  (require [clojure.core.reducers :as r]))
+  (:require [clojure.core.reducers :as r]))
 
 (comment r/fold )
 
@@ -11,7 +11,7 @@
   (*))
 
 ;; Whoa!
-;; So plus/+ carries its own identity function - it has its own seed
+;; So addition/+ carries its own identity function - it has its own seed
 ;; As does multiply/*
 ;;
 ;; but inc requires an argument.
@@ -28,5 +28,17 @@
   (time (reduce + (map inc (filter even? v))))
   (time (reduce + (r/map inc (r/filter even? v))))
   (time (r/fold + (r/map inc (r/filter even? v))))
+)
+
+;; But we can use Transducers too - our "data transformation recipes" can be
+;; used for paralell processing
+
+(comment
+  (def recipe (comp
+                (filter even?)
+                (map inc)))
+
+  ;; Our reducing function needs to be our "recipe", with our "combining function" - addition
+  (time (r/fold (recipe +) v))
 )
 
